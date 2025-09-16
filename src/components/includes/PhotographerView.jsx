@@ -117,7 +117,7 @@ const PhotographerView = () => {
           ))}
         </div>
         <div className="view-more-btn">
-          <a href="/PhotographerViewPersonal">View All</a>
+           <Link to="/PhotographerViewPersonal">View All</Link>
         </div>
       </div>
       {/* Personal Section */}
