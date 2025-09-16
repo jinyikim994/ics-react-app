@@ -1,0 +1,123 @@
+/* ───── 기본 스타일 ───── */
+$overlay-opacity: 0.8;
+$overlay-background: #fff;
+$overlay-border: 2px solid #000;
+$job-font-family: "Roboto Condensed", sans-serif;
+$name-font-family: 'Times New Roman', serif;
+
+#artist-list {
+
+    .gallery-container {
+        position: relative;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+        margin-top: 80px;
+        padding: 0 10px;
+        overflow: hidden;
+
+      // 모바일
+      @media (max-width: 767px) {
+          grid-template-columns: 1fr;
+          margin-top: 20px;
+      }
+
+      // 노트북 13인치
+      @media (min-width: 1440px) and (max-width: 1919px) {
+          margin-top: 15px;
+      }
+  }
+
+  .gallery-item {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
+
+    a {
+      display: block;
+      flex: 1;
+      position: relative;
+      text-decoration: none;
+      color: inherit;
+
+      img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        object-position: center;
+
+        // 노트북 13인치
+        @media (min-width: 1440px) and (max-width: 1919px) {
+          /* max-height: 570px;
+          height: 570px;
+          object-fit: cover; */
+        }
+      }
+
+    .job {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 99;
+      font-family: $job-font-family;
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: clamp(20px, 4vw, 35px);
+      color: #fff;
+      letter-spacing: 5px;
+
+      &:hover {
+        color: #111;
+      }
+    }
+    }
+  }
+}
+
+#artist-list .gallery-item .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.1s ease, transform 0.1s ease;
+  will-change: opacity;
+  z-index: 99;
+}
+
+#artist-list .gallery-item:hover .overlay {
+  opacity: 0.8;
+  background: #fff;
+  border: 2px solid #000;
+}
+
+#artist-list .gallery-item .job {
+  position: absolute;
+  top: 50%; 
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 99;
+  font-family: "Roboto Condensed", sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: clamp(20px, 4vw, 35px);
+  color: #fff;
+  letter-spacing: 5px;
+}
+
+#artist-list .gallery-item:hover .job {
+  color: #111;
+}
+
+#artist-list .gallery-item .name {
+  padding: 13px 0;
+  background-color: #fff;
+  font-family: 'Times New Roman', serif;
+  font-weight: 400;
+  font-size: clamp(16px, 2.5vw, 19px);
+  color: #000;
+}

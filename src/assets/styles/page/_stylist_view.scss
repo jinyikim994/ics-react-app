@@ -1,0 +1,138 @@
+$font-family_1: var(--font-serif);
+$font-family_2: var(--font-sans);
+$font-family_3: var(--font-helvetica);
+
+#stylist-view {
+	--padding-x-desktop: 40px;
+	--padding-x-mobile: 20px;
+	--font-serif: 'Times New Roman', sans-serif;
+	--font-sans: 'Roboto', sans-serif;
+	--font-helvetica: 'Helvetica Neue', sans-serif;
+	.main-content {
+		display: flex;
+		justify-content: center;
+		margin: 34px 0 118px;
+	}
+	.magazine-cover {
+		max-width: 622px;
+		width: 100%;
+		object-fit: contain;
+		img {
+			display: block;
+			width: 100%;
+		}
+	}
+	.info {
+		flex-shrink: 0;
+		font-family: $font-family_1;
+		font-size: 43px;
+		font-weight: 500;
+		margin: 29px 0;
+		text-align: center;
+		small {
+			display: block;
+			font-family: $font-family_2;
+			font-size: 11px;
+			font-weight: 700;
+			margin-top: 0;
+		}
+	}
+	.gallery-container {
+		display: grid;
+		gap: 40px 49px;
+		grid-template-columns: repeat(5, 1fr);
+		padding: 31px var(--padding-x-desktop) 40px;
+	}
+	.gallery-item {
+		img {
+			width: 100%;
+			height: 370px;
+			max-height: 370px;
+			object-fit: contain;
+		}
+		span {
+			display: block;
+			padding: 6px 0;
+			font-size: 15px;
+			font-weight: 700;
+			text-align: center;
+			text-transform: uppercase;
+		}
+	}
+	.title {
+		font-family: $font-family_3;
+		font-size: 17px;
+		letter-spacing: 1px;
+		padding: 0 var(--padding-x-desktop);
+		text-transform: uppercase;
+	}
+	.view-more-btn {
+		font-family: $font-family_1;
+		font-size: 20px;
+		margin-bottom: 100px;
+		padding: 30px 0;
+		text-align: center;
+		text-decoration: underline;
+	}
+}
+
+@media (max-width: 767px) {
+	#stylist-view {
+		.main-content {
+			margin: 20px 0 0;
+		}
+		.magazine-cover {
+			max-width: 440px;
+			padding: 0 15px;
+		}
+		.info {
+			font-size: 35px;
+			margin: 35px 0;
+			small {
+				margin-top: 5px;
+			}
+		}
+		.title {
+			font-size: 14px;
+			padding: 0 var(--padding-x-mobile);
+		}
+		.gallery-container {
+			gap: 25px 61px;
+			grid-template-columns: repeat(2, 1fr);
+			padding: 15px 30px;
+		}
+		.film {
+			.gallery-container {
+				gap: 25px 24px;
+			}
+		}
+		.gallery-item {
+			img {
+				height: 212px;
+				max-height: 212px;
+			}
+			span {
+				font-size: 13px;
+			}
+		}
+		.view-more-btn {
+			font-size: 16px;
+			margin-bottom: 30px;
+			padding: 15px 0;
+		}
+		.ad {
+			margin-top: 20px;
+		}
+	}
+}
+
+@media (min-width: 1440px) and (max-width: 1919px) {
+	#stylist-view {
+		.magazine-cover {
+			max-width: 380px;
+		}
+		.gallery-container {
+			padding: 0 var(--padding-x-desktop) 40px;
+		}
+	}
+}

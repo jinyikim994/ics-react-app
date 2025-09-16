@@ -1,0 +1,131 @@
+// ─── 변수 설정 ───
+$scroll-duration: 20s;
+$mobile-scroll-duration: 10s;
+
+// ─── Keyframes ───
+@keyframes scrollLoop {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-50%); }
+}
+
+@keyframes scrollLoopReverse {
+  0% { transform: translateY(-50%); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes scrollLoopMobile {
+  0% { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(0, -50%, 0); }
+}
+
+@keyframes scrollLoopReverseMobile {
+  0% { transform: translate3d(0, -50%, 0); }
+  100% { transform: translate3d(0, 0, 0); }
+}
+
+// ─── Mixin: 비디오 max-height 설정 ───
+@mixin video-max-height($max) {
+  .masonry-item video {
+    max-height: $max;
+  }
+}
+
+
+#main {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background: #fff;
+
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 100vw;
+    height: 100vh;
+    margin-top: 75px;
+    overflow: hidden;
+
+    .column {
+      position: relative;
+
+      &.column-2 .scroller {
+        animation: scrollLoopReverse $scroll-duration linear infinite;
+      }
+    }
+
+    .scroller {
+      display: flex;
+      flex-direction: column;
+      will-change: transform;
+      transform: translate3d(0, 0, 0);
+      backface-visibility: hidden;
+      animation: scrollLoop $scroll-duration linear infinite;
+
+      > * {
+        flex-shrink: 0;
+      }
+    }
+
+    .masonry-item {
+      position: relative;
+      line-height: 0;
+
+      img {
+        display: block;
+        width: 100%;
+        height: auto;
+        margin: 0;
+        padding: 0;
+        border: none;
+      }
+
+      video {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+      }
+    }
+  }
+
+  // ─── 반응형: 모바일 (2열) ───
+  @media (max-width: 767px) {
+    .column-1 { order: 1; }
+    .column-2 { display: none; }
+    .column-3 { order: 2; }
+
+    .gallery {
+      grid-template-columns: repeat(2, 1fr);
+      height: 100vh;
+      margin-top: 0;
+
+      .column {
+        height: 100vh;
+      }
+
+      .scroller {
+        height: auto;
+      }
+
+      .column-1 .scroller {
+        animation: scrollLoopMobile $mobile-scroll-duration linear infinite;
+      }
+
+      .column-3 .scroller {
+        animation: scrollLoopReverseMobile $mobile-scroll-duration linear infinite;
+      }
+    }
+
+    // 비디오 높이 조정
+    @include video-max-height(126px);
+    }
+
+  // ─── 반응형: 태블릿 ───
+  @media (min-width: 768px) and (max-width: 1279px) {
+    @include video-max-height(250px);
+  }
+
+  // ─── 반응형: 데스크탑 ───
+  @media (min-width: 1280px) {
+    @include video-max-height(350px);
+  }
+}

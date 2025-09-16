@@ -1,0 +1,158 @@
+$font-family_1: 'Times New Roman', sans-serif;
+$font-family_2: "Roboto", sans-serif;
+$font-family_3: 'Helvetica Neue', sans-serif;
+
+#photographer-view {
+
+	.main-content {
+		display: flex;
+		justify-content: center;
+		margin: 34px 0 118px;
+
+		.magazine-cover {
+			max-width: 647px;
+			object-fit: contain;
+			width: 100%;
+
+			img {
+				display: block;
+				width: 100%;
+			}
+		}
+
+		.info {
+			flex-shrink: 0;
+			font-family: $font-family_1;
+			font-size: 43px;
+			font-weight: 500;
+			margin: 29px 0 29px 0;
+			text-align: center;
+
+			small {
+				display: block;
+				font-family: $font-family_2;
+				font-size: 11px;
+				font-weight: 700;
+			}
+		}
+	}
+
+	.gallery-container {
+		display: grid;
+		gap: 40px 49px;
+		grid-template-columns: repeat(5, 1fr);
+		padding: 31px 40px 40px;
+	}
+
+	.gallery-item {
+
+		img {
+			height: 370px;
+			max-height: 370px;
+			object-fit: contain;
+			width: 100%;
+		}
+
+		span {
+			display: block;
+			padding: 5px 0;
+			font-size: 15px;
+			font-weight: 700;
+			text-align: center;
+			text-transform: uppercase;
+		}
+    
+	}
+
+	.title {
+		font-family: $font-family_3;
+		font-size: 17px;
+		letter-spacing: 1px;
+		padding: 0 40px;
+		text-transform: uppercase;
+	}
+
+	.view-more-btn {
+		font-family: $font-family_1;
+		font-size: 20px;
+		margin-bottom: 100px;
+		padding: 30px 0;
+		text-align: center;
+		text-decoration: underline;
+	}
+}
+
+@media (max-width: 767px) {
+
+	#photographer-view {
+
+		.main-content {
+			margin: 20px 0 0;
+
+			.magazine-cover {
+				max-width: 440px;
+				padding: 0 15px;
+			}
+
+			.info {
+				font-size: 35px;
+				margin: 35px 0 35px 0;
+				small {
+					margin-top: 5px;
+				}
+			}
+
+		}
+
+		.title {
+			font-size: 14px;
+			padding: 0 20px;
+		}
+
+		.ad {
+			margin-top: 20px;
+		}
+
+		.gallery-container {
+			gap: 25px 61px;
+			grid-template-columns: repeat(2, 1fr);
+			padding: 15px 30px;
+		}
+
+		.gallery-item {
+
+			img {
+				height: 212px;
+				max-height: 212px;
+			}
+
+			span {
+				font-size: 13px;
+			}
+
+		}
+		.view-more-btn {
+			font-size: 16px;
+			margin-bottom: 30px;
+			padding: 15px 0;
+		}
+	}
+}
+
+@media (min-width: 1440px) and (max-width: 1919px) {
+
+	#photographer-view {
+
+		.main-content {
+      
+			.magazine-cover {
+				max-width: 400px;
+			}
+		}
+
+		.gallery-container {
+			padding: 0 40px 40px;
+		}
+
+	}
+}

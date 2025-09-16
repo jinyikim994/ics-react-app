@@ -1,0 +1,102 @@
+$font-family_1: var(--font-primary);
+:root {
+	--container-margin-desktop: 34px 100px;
+	--container-margin-laptop: 20px 100px;
+	--container-margin-mobile: 0;
+	// --font-primary: 'Helvetica Neue', sans-serif;
+	--grid-col-gap-desktop: 5vw;
+	--grid-row-gap-desktop: 2vw;
+	--grid-gap-mobile: 15px;
+	--font-size-desktop: 15px;
+	--font-size-mobile: 12px;
+	--grid-image-aspect: 3 / 4;
+	--grid-image-max-height-mobile: 260px;
+	--cover-max-height: 230px;
+}
+
+#stylist-fashion-view-all {
+
+	overflow: unset;
+
+	header {
+
+		.logo {
+			a {
+				position: relative;
+				top: 5px;
+			}
+		}
+	}
+
+	.container {
+		margin: var(--container-margin-desktop);
+	}
+
+	.grid {
+		display: grid;
+		grid-template-columns: repeat(5, 1fr);
+		grid-column-gap: var(--grid-col-gap-desktop);
+		grid-row-gap: var(--grid-row-gap-desktop);
+		margin-bottom: 77px;
+		img {
+			width: 100%;
+			aspect-ratio: var(--grid-image-aspect);
+			object-fit: cover;
+		}
+		span {
+			display: block;
+			padding: 10px 0;
+			// font-family: $font-family_1;
+			font-size: var(--font-size-desktop);
+			text-align: center;
+			text-transform: uppercase;
+		}
+	}
+
+	.row-span-2 {
+		grid-row: span 2;
+	}
+
+	.col-span-2 {
+		grid-column: span 1;
+	}
+
+	.cover {
+		grid-column: span 2;
+		grid-row: span 1;
+		height: 100%;
+		max-height: var(--cover-max-height);
+	}
+
+}
+
+@media (max-width: 768px) {
+
+	#stylist-fashion-view-all {
+
+		.grid {
+			grid-template-columns: repeat(2, 1fr);
+			gap: var(--grid-gap-mobile);
+			margin-top: 20px;
+			padding: 0 15px;
+			img {
+				height: auto;
+				max-height: var(--grid-image-max-height-mobile);
+			}
+			span {
+				font-size: var(--font-size-mobile);
+			}
+		}
+		.container {
+			margin: var(--container-margin-mobile);
+		}
+	}
+}
+
+@media (min-width: 1440px) and (max-width: 1919px) {
+	#stylist-fashion-view-all {
+		.container {
+			margin: var(--container-margin-laptop);
+		}
+	}
+}

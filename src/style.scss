@@ -1,0 +1,61 @@
+@charset "UTF-8";
+
+/* fonts */
+@import "./assets/styles/setting/_fonts.scss";
+
+@font-face {
+    font-family: 'Helvetica Neue';
+    src: url('./assets/fonts/Helvetica/HelveticaNeueLTPro-HvCn.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Roboto Condensed";
+    src: url('./assets/fonts/roboto/RobotoCondensed-Regular.ttf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+
+/* reset */
+@import "./assets/styles/setting/_reset.scss";
+
+/* mixin*/
+@import "./assets/styles/setting/_mixin.scss";
+
+/* var */
+@import "./assets/styles/setting/_vars.scss";
+
+/* common */
+@import "./assets/styles/common.scss";
+
+// header
+@import "./assets/styles/layout/header.scss";
+
+// main
+@import "./assets/styles/page/main.scss";
+
+// artist
+@import "./assets/styles/page/_artist.scss";
+@import "./assets/styles/page/_photographer_view.scss";
+@import "./assets/styles/page/_photographer_view_ad.scss";
+@import "./assets/styles/page/_photographer_view_personal.scss";
+
+@import "./assets/styles/page/_stylist_view.scss";
+@import "./assets/styles/page/_fashion_view.scss";
+
+@import "./assets/styles/page/_beauty_view.scss";
+
+// production
+@import "./assets/styles/page/_production.scss";
+
+// about
+@import "./assets/styles/page/_about.scss";
+
+// contact
+@import "./assets/styles/page/_contact.scss";
+
+
+

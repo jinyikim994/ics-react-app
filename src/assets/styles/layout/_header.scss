@@ -1,0 +1,128 @@
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+    height: 75px;
+    padding: 0 101px 0 39px;
+
+    background-color: white;
+
+    .logo {
+        display: flex;
+        align-items: center;
+        height: 100%;
+
+        a{
+            position: relative;
+            font-family: 'Helvetica Neue';
+            font-size: clamp(24px, 4vw, 39px);
+            font-weight: bold;
+            color: #000;
+        }
+    }
+
+    nav ul{
+        display: flex;
+
+        li {
+            margin-left: 52px;
+            font-family: "Roboto Condensed", sans-serif;
+            font-size: 17px;
+            font-weight: 400;
+            color: #343a40;
+        }
+
+        .active{
+            color: #a9a9a9;
+        }
+    }
+
+    // 토글 메뉴
+    .mobile-btn {
+        display: none;
+        flex-direction: column;
+        gap: 7px;
+        padding: 10px;
+        background: none;
+        border: none;
+        cursor: pointer;
+
+        span {
+            display: block;
+            width: 40px;
+            height: 1px;
+            background-color: #000;
+        }
+    }
+}
+
+// sub
+.sub-header{
+    position: unset;
+    height: 55px;
+    border-bottom: 1px solid #d1d1d1;
+}
+
+/* ───── 모바일 ───── */
+@media (max-width: 767px) {
+
+    header {
+        padding: 15px;
+
+        .logo a{
+            top: 5px;
+        }
+
+        .mobile-btn {
+            display: flex;
+        }
+    }
+
+    .accordion-menu {
+        display: none ;
+        flex-direction: column;
+        align-items: flex-start;
+
+        position: absolute;
+        top: 55px;
+        right: 0;
+        left: 0;
+        z-index: 99;
+
+        padding: 0 24px;
+
+        background: #fff;
+
+        a {
+            width: 100%;
+            margin: 20px 0;
+        }
+
+        &.show {
+            display: flex;
+
+            ul{
+                display: flex;
+                flex-direction: column;
+
+                li{
+                margin: 0;
+
+                    a{
+                        display: block;
+                        margin: 15px 0;
+                    }
+                }
+            }
+        }
+    }
+
+}
+
