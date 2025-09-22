@@ -15,8 +15,7 @@ https://jinyikim994.github.io/ics-react-app
 ## 🧰 사용 기술
 - React
 - React Router 
-- Styled Components or CSS Modules 
-- GitHub Pages 
+- SCSS
 
 ## 🚀 설치 및 실행 (개발용)
 ```bash
