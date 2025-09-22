@@ -1,6 +1,6 @@
 {
-  "homepage": "https://jinyikim994.github.io/test",
-  "name": "my-app",
+  "homepage": "https://jinyikim994.github.io/ics-react-app",
+  "name": "ics-react-app",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
